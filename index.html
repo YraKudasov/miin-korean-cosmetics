@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiiN Korean Cosmetics · Argentería</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--stone:#EDEAE3;--stone-deep:#E1DDD3;--ink:#232323;--ink-soft:#5B5B54;--celadon:#7C9885;--celadon-deep:#5E7568;--clay:#D9A9A0;--jade:#35473D;--paper:#F7F5F0;--radius:2px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--stone);color:var(--ink);font-family:'Work Sans',sans-serif;line-height:1.6;}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;color:var(--ink);}
+a{color:inherit;}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+nav{position:sticky;top:0;background:rgba(237,234,227,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(35,35,35,0.08);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;}
+.brand{font-family:'Fraunces',serif;font-size:1.15rem;}
+.brand em{font-style:italic;color:var(--celadon-deep);}
+.lang-toggle{display:flex;border:1px solid var(--ink);border-radius:20px;overflow:hidden;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;}
+.lang-toggle button{background:none;border:none;padding:6px 14px;cursor:pointer;color:var(--ink);}
+.lang-toggle button.active{background:var(--ink);color:var(--paper);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:24px;font-weight:500;font-size:0.9rem;text-decoration:none;cursor:pointer;border:none;}
+.btn-primary{background:var(--jade);color:var(--paper);}
+.btn-ghost{border:1px solid var(--ink);background:none;}
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(ellipse at 75% 20%,rgba(124,152,133,0.35),transparent 55%),radial-gradient(ellipse at 15% 80%,rgba(217,169,160,0.30),transparent 50%),var(--stone);}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;text-transform:uppercase;color:var(--celadon-deep);margin-bottom:22px;}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.02;max-width:14ch;}
+.hero h1 .accent{font-style:italic;color:var(--celadon-deep);}
+.hero-sub{margin-top:26px;max-width:46ch;font-size:1.1rem;color:var(--ink-soft);}
+.hero-cta{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;}
+.rating-badge{display:inline-flex;align-items:center;gap:10px;margin-top:48px;padding:12px 18px;background:var(--paper);border-radius:30px;border:1px solid rgba(35,35,35,0.08);}
+.stars{color:var(--clay);letter-spacing:2px;}
+section{padding:80px 0;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;text-transform:uppercase;color:var(--celadon-deep);margin-bottom:14px;}
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;}
+.about-copy p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:18px;max-width:52ch;}
+.about-figure{aspect-ratio:4/5;background:linear-gradient(160deg,var(--celadon) 0%,var(--stone-deep) 60%,var(--clay) 130%);display:flex;align-items:flex-end;padding:22px;}
+.about-figure .tag{background:rgba(247,245,240,0.92);padding:8px 14px;border-radius:20px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.cat-card{background:var(--paper);border:1px solid rgba(35,35,35,0.08);padding:36px 28px;}
+.cat-card svg{width:38px;height:38px;color:var(--celadon-deep);margin-bottom:22px;}
+.proof{background:var(--paper);padding:64px 48px;display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;}
+.proof-score{text-align:center;}
+.proof-score .num{font-family:'Fraunces',serif;font-size:5rem;line-height:1;}
+.quote{border-left:2px solid var(--celadon);padding-left:20px;margin-bottom:22px;}
+.quote p{font-style:italic;}
+.quote .mono{color:var(--ink-soft);margin-top:8px;display:block;}
+.loc-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:center;}
+.map-block{aspect-ratio:1/1;background:var(--stone-deep);position:relative;background-image:linear-gradient(rgba(35,35,35,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(35,35,35,0.06) 1px,transparent 1px);background-size:26px 26px;}
+.map-pin{position:absolute;top:44%;left:52%;transform:translate(-50%,-100%);width:16px;height:16px;border-radius:50%;background:var(--jade);box-shadow:0 0 0 8px rgba(53,71,61,0.15);}
+.info-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(35,35,35,0.1);}
+.info-row .label{width:120px;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--celadon-deep);text-transform:uppercase;}
+.pending{color:var(--ink-soft);font-style:italic;}
+footer{background:var(--jade);color:var(--paper);padding:64px 0 32px;}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;}
+footer h3{color:var(--paper);margin-bottom:14px;}
+footer a.link{display:block;color:var(--paper);text-decoration:none;margin-bottom:10px;}
+.foot-bottom{margin-top:56px;padding-top:24px;border-top:1px solid rgba(247,245,240,0.15);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:rgba(247,245,240,0.5);}
+@media(max-width:800px){.about-grid,.loc-grid{grid-template-columns:1fr;}.cat-grid{grid-template-columns:1fr;}.proof{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<div class="brand">MiiN <em>Korean Cosmetics</em></div>
+<div style="display:flex;align-items:center;gap:20px;">
+<div class="lang-toggle"><button data-set-lang="es" class="active">ES</button><button data-set-lang="en">EN</button></div>
+<a class="btn btn-primary" href="https://wa.me/34931026612" target="_blank"><span data-i18n="nav.cta">Escribir por WhatsApp</span></a>
+</div></div></nav>
+<header class="hero"><div class="wrap">
+<div class="hero-eyebrow" data-i18n="e1">Carrer de l'Argenteria, 43 · El Born</div>
+<h1><span data-i18n="h1a">K-beauty en el</span> <span class="accent" data-i18n="h1b">corazón del Born</span></h1>
+<p class="hero-sub" data-i18n="sub">Cosmética coreana original, seleccionada con cuidado, en una de las calles con más historia de Barcelona.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="https://wa.me/34931026612" target="_blank"><span data-i18n="cta1">Reservar por WhatsApp</span></a>
+<a class="btn btn-ghost" href="#location"><span data-i18n="cta2">Cómo llegar</span></a>
+</div>
+<div class="rating-badge"><span class="stars">★★★★★</span><span class="mono">5.0 · 305 <span data-i18n="rev">reseñas de Google</span></span></div>
+</div></header>
+<section id="about"><div class="wrap about-grid">
+<div class="about-copy">
+<div class="eyebrow" data-i18n="ae">La tienda</div>
+<h2 data-i18n="ah">Piel cuidada, a la coreana</h2>
+<p data-i18n="ap1">MiiN acerca los rituales de skincare coreano al Born: fórmulas suaves, ingredientes reconocibles y una forma de cuidar la piel pensada paso a paso, no producto a producto.</p>
+<p data-i18n="ap2">Un espacio pequeño pensado para probar, preguntar y llevarte solo lo que de verdad vas a usar.</p>
+</div>
+<div class="about-figure"><span class="tag" data-i18n="at">Fachada — foto pendiente de confirmar</span></div>
+</div></section>
+<section style="background:var(--stone-deep);"><div class="wrap">
+<div class="eyebrow" data-i18n="ce">Qué encontrarás</div>
+<h2 data-i18n="ch" style="margin-bottom:12px;">Tres formas de empezar</h2>
+<p data-i18n="cp" style="color:var(--ink-soft);margin-bottom:40px;">Categorías orientativas — el catálogo exacto se confirma con la propietaria.</p>
+<div class="cat-grid">
+<div class="cat-card"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="20" cy="24" r="11"/><path d="M20 13c0-4 3-7 7-8-1 4-3 7-7 8Z"/></svg><h3 data-i18n="c1h">Cuidado facial</h3><p data-i18n="c1p" style="color:var(--ink-soft);">Limpieza, esencias, cremas y protección.</p></div>
+<div class="cat-card"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="14" y="8" width="12" height="24" rx="6"/></svg><h3 data-i18n="c2h">Maquillaje</h3><p data-i18n="c2p" style="color:var(--ink-soft);">Acabados naturales al estilo coreano.</p></div>
+<div class="cat-card"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 28c0-9 6-16 10-16s10 7 10 16"/></svg><h3 data-i18n="c3h">Accesorios</h3><p data-i18n="c3p" style="color:var(--ink-soft);">Herramientas y pequeños rituales diarios.</p></div>
+</div></div></section>
+<section><div class="wrap"><div class="proof">
+<div class="proof-score"><div class="num">5.0</div><span class="stars">★★★★★</span><span class="mono">305 <span data-i18n="pr">reseñas en Google</span></span></div>
+<div>
+<div class="eyebrow" data-i18n="pe">Lo que dicen — vista previa</div>
+<div class="quote"><p data-i18n="q1">"Encontré justo lo que buscaba y me explicaron cada paso sin prisa."</p><span class="mono" data-i18n="q1n">Ejemplo — sustituir por reseña real</span></div>
+<div class="quote"><p data-i18n="q2">"Un rincón con mucho mimo en pleno Born. Repetiré seguro."</p><span class="mono" data-i18n="q2n">Ejemplo — sustituir por reseña real</span></div>
+</div></div></div></section>
+<section id="location" style="background:var(--stone-deep);"><div class="wrap loc-grid">
+<div class="map-block"><div class="map-pin"></div></div>
+<div>
+<div class="eyebrow" data-i18n="le">Visítanos</div>
+<h2 style="margin-bottom:32px;" data-i18n="lh">En el corazón del Born</h2>
+<div class="info-row"><span class="label" data-i18n="la">Dirección</span><span>Carrer de l'Argenteria, 43<br>08003 Ciutat Vella, Barcelona</span></div>
+<div class="info-row"><span class="label" data-i18n="lo">Horario</span><span class="pending" data-i18n="lov">Por confirmar con la propietaria</span></div>
+<div class="info-row"><span class="label" data-i18n="lp">Teléfono</span><span>931 02 66 12</span></div>
+</div></div></section>
+<footer><div class="wrap footer-grid">
+<div><h3>MiiN Korean Cosmetics</h3><p style="color:rgba(247,245,240,0.7);max-width:36ch;" data-i18n="fs">Cosmética coreana en Carrer de l'Argenteria, 43 — El Born, Barcelona.</p></div>
+<div><div class="mono" style="margin-bottom:16px;color:rgba(247,245,240,0.55);" data-i18n="fc">Contacto</div><a class="link" href="https://wa.me/34931026612">WhatsApp</a><a class="link" href="tel:+34931026612">931 02 66 12</a></div>
+<div><div class="mono" style="margin-bottom:16px;color:rgba(247,245,240,0.55);" data-i18n="fso">Redes</div><span style="opacity:0.6;" data-i18n="fsv">Instagram — pendiente de confirmar</span></div>
+</div>
+<div class="wrap foot-bottom"><span data-i18n="fr">© MiiN Korean Cosmetics · Argentería</span><span data-i18n="fd">Maqueta de demostración — contenido a confirmar con la propietaria</span></div>
+</footer>
+<script>
+const D={es:{'nav.cta':'Escribir por WhatsApp',e1:"Carrer de l'Argenteria, 43 · El Born",h1a:'K-beauty en el',h1b:'corazón del Born',sub:'Cosmética coreana original, seleccionada con cuidado, en una de las calles con más historia de Barcelona.',cta1:'Reservar por WhatsApp',cta2:'Cómo llegar',rev:'reseñas de Google',ae:'La tienda',ah:'Piel cuidada, a la coreana',ap1:'MiiN acerca los rituales de skincare coreano al Born.',ap2:'Un espacio pequeño pensado para probar y preguntar.',at:'Fachada — foto pendiente de confirmar',ce:'Qué encontrarás',ch:'Tres formas de empezar',cp:'Categorías orientativas — el catálogo exacto se confirma con la propietaria.',c1h:'Cuidado facial',c1p:'Limpieza, esencias, cremas y protección.',c2h:'Maquillaje',c2p:'Acabados naturales al estilo coreano.',c3h:'Accesorios',c3p:'Herramientas y pequeños rituales diarios.',pr:'reseñas en Google',pe:'Lo que dicen — vista previa',q1:'"Encontré justo lo que buscaba y me explicaron cada paso sin prisa."',q1n:'Ejemplo — sustituir por reseña real',q2:'"Un rincón con mucho mimo en pleno Born. Repetiré seguro."',q2n:'Ejemplo — sustituir por reseña real',le:'Visítanos',lh:'En el corazón del Born',la:'Dirección',lo:'Horario',lov:'Por confirmar con la propietaria',lp:'Teléfono',fs:'Cosmética coreana en Carrer de l\'Argenteria, 43.',fc:'Contacto',fso:'Redes',fsv:'Instagram — pendiente de confirmar',fr:'© MiiN Korean Cosmetics · Argentería',fd:'Maqueta de demostración — contenido a confirmar'},
+en:{'nav.cta':'Message us on WhatsApp',e1:"Carrer de l'Argenteria, 43 · El Born",h1a:'K-beauty in the',h1b:'heart of El Born',sub:'Original Korean cosmetics, carefully chosen, on one of Barcelona\'s most storied streets.',cta1:'Book via WhatsApp',cta2:'Get directions',rev:'Google reviews',ae:'The shop',ah:'Skincare, the Korean way',ap1:'MiiN brings Korean skincare rituals to El Born.',ap2:'A small space made for trying things and asking questions.',at:'Storefront — photo pending confirmation',ce:'What you\'ll find',ch:'Three ways to start',cp:'Indicative categories — exact catalogue to be confirmed with the owner.',c1h:'Skincare',c1p:'Cleansers, essences, creams and SPF.',c2h:'Makeup',c2p:'Natural, Korean-style finishes.',c3h:'Accessories',c3p:'Application tools and small daily rituals.',pr:'Google reviews',pe:'What people say — preview',q1:'"I found exactly what I was looking for, and they explained every step without rushing."',q1n:'Example — replace with a real review',q2:'"A carefully looked-after corner of El Born. I\'ll be back."',q2n:'Example — replace with a real review',le:'Visit us',lh:'In the heart of El Born',la:'Address',lo:'Hours',lov:'To be confirmed with the owner',lp:'Phone',fs:'Korean cosmetics at Carrer de l\'Argenteria, 43.',fc:'Contact',fso:'Social',fsv:'Instagram — pending confirmation',fr:'© MiiN Korean Cosmetics · Argentería',fd:'Demo mockup — content to be confirmed'}};
+function setLang(l){document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(D[l][k])el.textContent=D[l][k];});document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.toggle('active',b.getAttribute('data-set-lang')===l));}
+document.querySelectorAll('.lang-toggle button').forEach(b=>b.addEventListener('click',()=>setLang(b.getAttribute('data-set-lang'))));
+</script>
+</body></html>
